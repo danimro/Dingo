@@ -23,7 +23,7 @@ public class TeacherDao {
         return this.teachers.get(id).getCourses();
     }
 
-    public void addCourse(int teacherID, int courseID){
-        this.teachers.get(teacherID).
+    public void addCourse(int teacherID, Course course){
+        this.teachers.get(teacherID).addCourse(course);
     }
 }

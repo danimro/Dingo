@@ -22,7 +22,8 @@ public class TeacherService {
         return this.teacherDao.getCoursesOfTeacher(id);
     }
 
-    public void addCourse(int teacherID, int courseID){
-
+    //should get name/id from controller and call the dao with course instance, maybe add coursedao instance here.
+    public void addCourse(int teacherID, Course course){
+        this.teacherDao.addCourse(teacherID, course);
     }
 }

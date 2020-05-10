@@ -6,6 +6,7 @@ import java.util.List;
 public class Teacher {
 
     private int id;
+    private String password;
     private String name;
     private List<Course> courses;
     private List<Job> jobs;
@@ -16,16 +17,20 @@ public class Teacher {
         return id;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public List<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void addStudent(Student toAdd) {
+        this.students.add(toAdd);
     }
 
     public String getName() {
@@ -36,24 +41,29 @@ public class Teacher {
         return courses;
     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public void addCourse(Course toAdd) {
+        this.courses.add(toAdd);
+    }
+
+    public void removeCourse(Course toRemove){
+        this.courses.remove(toRemove);
     }
 
     public List<Job> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<Job> jobs) {
-        this.jobs = jobs;
+    public void addJob(Job toAdd) {
+        this.jobs.add(toAdd);
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public Teacher(int id, String name, List<Course> courses) {
+    public Teacher(int id,String password, String name, List<Course> courses) {
         this.id = id;
+        this.password = password;
         this.name = name;
         this.jobs = new ArrayList<>();
         this.students = new ArrayList<>();

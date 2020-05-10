@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Student {
     private int id;
+    private String password;
     private String name;
     private List<Job> jobs;
     private List<Teacher> teachers;
@@ -12,6 +13,14 @@ public class Student {
 
     public int getId() {
         return id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setId(int id) {
@@ -42,8 +51,9 @@ public class Student {
         this.name = name;
     }
 
-    public Student(int id, String name) {
+    public Student(int id, String password, String name) {
         this.id = id;
+        this.password = password;
         this.name = name;
         this.jobs = new ArrayList<>();
         this.teachers = new ArrayList<>();
